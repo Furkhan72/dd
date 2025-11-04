@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seerat e Mustffa ﷺ Quiz Competition 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('bbbbbbbbbbbbb.jpg') no-repeat center center/cover;
+      height: 100vh;
+      width: 100vw;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Overlay with golden vignette */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.9) 100%);
+      box-shadow: inset 0 0 150px rgba(255, 215, 0, 0.3);
+      z-index: 1;
+    }
+
+    /* Decorative light beams */
+    .lights::before, .lights::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.15), transparent 70%);
+      transform: rotate(45deg);
+      animation: rotateLight 20s linear infinite;
+    }
+
+    .lights::after {
+      transform: rotate(-45deg);
+      animation-direction: reverse;
+    }
+
+    @keyframes rotateLight {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Poster frame container */
+    .poster {
+      position: relative;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.7);
+      border: 4px solid gold;
+      box-shadow: 0 0 40px rgba(255, 215, 0, 0.8), inset 0 0 40px rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px 50px;
+      max-width: 1000px;
+      backdrop-filter: blur(2px);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Title Section */
+    .bismillah {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3em;
+      color: #ffd700;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+    }
+
+    h1 {
+      font-size: 2.6em;
+      font-weight: bold;
+      color: #ffd700;
+      text-shadow: 0 0 30px #ffd700, 0 0 60px #fff;
+      margin: 10px 0;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ffd700, 0 0 30px #fff; }
+      to { text-shadow: 0 0 30px #ffd700, 0 0 60px #fff; }
+    }
+
+    h2 {
+      color: #fff;
+      font-size: 1.4em;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    }
+
+    /* Winners Section */
+    .winners {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      justify-items: center;
+      margin-bottom: 30px;
+    }
+
+    .winner-card {
+      background: linear-gradient(145deg, rgba(255, 215, 0, 0.15), rgba(255, 255, 255, 0.05));
+      border: 2px solid #ffd700;
+      border-radius: 15px;
+      padding: 20px 10px;
+      width: 200px;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+
+    .winner-card::before {
+      content: '';
+      position: absolute;
+      top: -60%;
+      left: -60%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.25), transparent 70%);
+      transform: rotate(25deg);
+      animation: shine 5s linear infinite;
+    }
+
+    @keyframes shine {
+      0% { transform: rotate(25deg) translateX(-100%); }
+      100% { transform: rotate(25deg) translateX(100%); }
+    }
+
+    .winner-card:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.9);
+    }
+
+    .winner-name {
+      font-weight: 600;
+      color: #ffd700;
+      font-size: 1.1em;
+      margin-bottom: 6px;
+      text-shadow: 0 0 8px #fff;
+    }
+
+    .winner-detail {
+      font-size: 0.9em;
+      color: #fff;
+      line-height: 1.4em;
+      opacity: 0.95;
+    }
+
+    footer {
+      margin-top: 20px;
+      color: #fff;
+      font-size: 0.9em;
+      text-shadow: 0 0 8px #000;
+      letter-spacing: 1px;
+      animation: fadeIn 2s ease 1s forwards;
+    }
+
+    /* Sparkling floating particles */
+    .particles {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      overflow: hidden;
+      z-index: 3;
+    }
+    .particles span {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 215, 0, 0.8);
+      border-radius: 50%;
+      animation: float 10s linear infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(0.3); opacity: 0; }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="lights"></div>
+  <div class="particles"></div>
+
+  <div class="poster">
+    <div class="bismillah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+    <h1>Seerat e Mustffa ﷺ Quiz Competition</h1>
+    <h2>2025 Top 10 Winners</h2>
+
+    <div class="winners">
+      <div class="winner-card"><div class="winner-name">Ayesha Fatima</div><div class="winner-detail">D/O Naser<br>Hyderabad<br>1st</br></div></div>
+      <div class="winner-card"><div class="winner-name">Aneeqa Akthar </div><div class="winner-detail">D/O Kabeer<br>Bhongir<br>2nd</br></div></div>
+      <div class="winner-card"><div class="winner-name">Md Muhib Hassan</div><div class="winner-detail">Bhongir<br>S/O Mon Uddin</div></div>
+      <div class="winner-card"><div class="winner-name">Sultana</div><div class="winner-detail">Bhongir<br>H/O Saif Ullah</div></div>
+      <div class="winner-card"><div class="winner-name">Aneeqa</div><div class="winner-detail">Bhongir<br>D/O Md Kabeer</div></div>
+      <div class="winner-card"><div class="winner-name">Shameem Unissa</div><div class="winner-detail">Bhongir<br>H/O Saif Ullah</div></div>
+      <div class="winner-card"><div class="winner-name">Md Zameer</div><div class="winner-detail">Bhongir<br>S/O Kabeer</div></div>
+      <div class="winner-card"><div class="winner-name">Muskan Tabasum</div><div class="winner-detail">Hyderabad<br>D/O Md Detail</div></div>
+      <div class="winner-card"><div class="winner-name">Md Zameer</div><div class="winner-detail">Bhatir<br>S/O Kabeer</div></div>
+      <div class="winner-card"><div class="winner-name">[Winner Name]</div><div class="winner-detail">[Location]<br>[D/Relation Detail]</div></div>
+    </div>
+
+    <footer>✨ Designed with ❤️ for Seerat e Mustffa ﷺ Quiz Competition 2025 ✨</footer>
+  </div>
+
+  <script>
+    // Floating sparkles animation
+    const particles = document.querySelector('.particles');
+    for (let i = 0; i < 60; i++) {
+      const span = document.createElement('span');
+      span.style.left = Math.random() * 100 + '%';
+      span.style.animationDuration = 8 + Math.random() * 5 + 's';
+      span.style.animationDelay = Math.random() * 5 + 's';
+      particles.appendChild(span);
+    }
+  </script>
+</body>
+</html>
